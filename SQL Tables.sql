@@ -1,40 +1,44 @@
-CREATE DATABASE IF NOT EXISTS ims;
+DROP SCHEMA IF EXISTS ims;
 
-USE ims;
+CREATE SCHEMA IF NOT EXISTS ims;
 
-DROP SCHEMA ims;
-
-CREATE SCHEMA IF NOT EXISTS `ims`;
-
-USE `ims` ;
+USE ims ;
 
 CREATE TABLE IF NOT EXISTS `ims`.`customers` (
-    `customer_id` INT(11) UNIQUE NOT NULL AUTO_INCREMENT,
-    `first_name` VARCHAR(40) DEFAULT NULL,
-    `last_name` VARCHAR(40) DEFAULT NULL,
-    PRIMARY KEY (`customer_id`)
+`id` INT(11) NOT NULL AUTO_INCREMENT,
+`first_name` VARCHAR(40) DEFAULT NULL,
+`surname` VARCHAR(40) DEFAULT NULL,
+PRIMARY KEY (`id`)
 );
 
 CREATE TABLE IF NOT EXISTS `ims`.`items` (
-    `items_id` INT(11) NOT NULL AUTO_INCREMENT,
-    `items_name` VARCHAR(40) DEFAULT NULL,
+    `itemsId` INT(11) NOT NULL AUTO_INCREMENT,
+    `itemsname` VARCHAR(40) DEFAULT NULL,
     `value` INT(40) NOT NULL,
-    PRIMARY KEY (`items_id`)
+    PRIMARY KEY (`itemsId`)
 );
 
 CREATE TABLE IF NOT EXISTS `ims`.`orders` (
-    fk_customer_id INT NOT NULL,
-    order_id INT NOT NULL,
-    PRIMARY KEY (order_id, fk_customer_id),
-    FOREIGN KEY (fk_customer_id) REFERENCES customers(customer_id)
+    `fkId` INT(11) NOT NULL,
+    `orderId` INT(11) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (orderId, fkId),
+    FOREIGN KEY (fkId) REFERENCES customers(id)
 );
 
 CREATE TABLE IF NOT EXISTS `ims`. `order_items` (
-fk_order_id INT NOT NULL,
-fk_items_id INT NOT NULL,
-order_itemsID INT NOT NULL,
+`fkid` INT(11) NOT NULL AUTO_INCREMENT,
+`fk_first_name` VARCHAR(40) DEFAULT NULL,
+`fk_surname` VARCHAR(40) DEFAULT NULL,
+`fk_orderId` INT(11) NOT NULL AUTO_INCREMENT,
+`fk_itemsId` INT(11) NOT NULL AUTO_INCREMENT,
+`order_items_id` INT UNIQUE NOT NULL,
+`item_quantity` INT DEFAULT 1,
+`total_cost` DECIMAL(12,2),
 
-PRIMARY KEY (fk_order_id, fk_items_id, order_itemsID),
-FOREIGN KEY (fk_order_id) REFERENCES orders(order_id),
-FOREIGN KEY (fk_items_id) REFERENCES items(items_id)
+PRIMARY KEY (order_items_Id),
+FOREIGN KEY (fkid) REFERENCES customers(id),
+FOREIGN KEY (fk_first_name) REFERENCES customers(first_name),
+FOREIGN KEY (fk_surname) REFERENCES customers(surname),
+FOREIGN KEY (fk_orderId) REFERENCES orders(orderId),
+FOREIGN KEY (fk_itemsId) REFERENCES items(itemsId)
 );
