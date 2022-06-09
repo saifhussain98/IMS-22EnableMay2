@@ -62,7 +62,7 @@ public class ItemDAO implements Dao<Item> {
 	}
 
 	/**
-	 * Creates an item in the database
+	 * Creates item in the database
 	 * 
 	 * @param item - takes in an item object. itemsId will be ignored
 	 */
