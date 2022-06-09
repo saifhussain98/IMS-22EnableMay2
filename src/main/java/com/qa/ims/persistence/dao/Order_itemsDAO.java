@@ -142,7 +142,7 @@ public class Order_itemsDAO implements Dao<Order_items> {
 
     statement.setLong(3, order_items.getFk_itemsId());
     
-    statement.setLong(2, order_items.getItem_quantity());
+    statement.setLong(4, order_items.getItem_quantity());
 
 //    statement.setDouble(3, order_items.getTotal_cost_of_order());
 
