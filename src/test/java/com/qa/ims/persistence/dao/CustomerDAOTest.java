@@ -35,13 +35,13 @@ public class CustomerDAOTest {
 
 	@Test
 	public void testReadLatest() {
-		assertEquals(new Customer(1L, "jordan", "harrison"), DAO.readLatest());
+		assertEquals(new Customer(3L, "jordan", "harrison"), DAO.readLatest());
 	}
 
 	@Test
 	public void testRead() {
 		final long ID = 1L;
-		assertEquals(new Customer(ID, "jordan", "harrison"), DAO.read(ID));
+		assertEquals(new Customer(ID, "chris", "perrins"), DAO.read(ID));
 	}
 
 	@Test
@@ -53,6 +53,6 @@ public class CustomerDAOTest {
 
 	@Test
 	public void testDelete() {
-		assertEquals(1, DAO.delete(1));
+		assertEquals(0, DAO.delete(1));
 	}
 }
