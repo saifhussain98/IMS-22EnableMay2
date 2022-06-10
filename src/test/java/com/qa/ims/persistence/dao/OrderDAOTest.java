@@ -4,15 +4,13 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import com.qa.ims.persistence.domain.Order;
 import com.qa.ims.utils.DBUtils;
 
 public class OrderDAOTest {
-	
+
 	private final OrderDAO DAO = new OrderDAO();
 
 	@Before
@@ -23,7 +21,7 @@ public class OrderDAOTest {
 
 	@Test
 	public void testCreate() {
-		final Order created = new Order(2L, 1L);
+		final Order created = new Order(1L, 3L);
 		assertEquals(created, DAO.create(created));
 	}
 
@@ -41,20 +39,18 @@ public class OrderDAOTest {
 
 	@Test
 	public void testRead() {
-		final long orderId = 2L;
-		assertEquals(new Order(orderId, 10L), DAO.read(orderId));
+		final long orderId = 1L;
+		assertEquals(new Order(1L, 1L), DAO.read(orderId));
 	}
 
 	@Test
 	public void testUpdate() {
-		final Order updated = new Order(2L, 4L);
+		final Order updated = new Order(1L, 3L);
 		assertEquals(updated, DAO.update(updated));
-
 	}
 
 	@Test
 	public void testDelete() {
-		assertEquals(2, DAO.delete(2));
+		assertEquals(1, DAO.delete(1));
 	}
-	
 }
