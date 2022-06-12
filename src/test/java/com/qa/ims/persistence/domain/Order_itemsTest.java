@@ -10,4 +10,6 @@ public class Order_itemsTest {
 	public void testEquals() {
 		EqualsVerifier.simple().forClass(Order_items.class).verify();
 	}
+	
+	
 }

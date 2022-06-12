@@ -46,10 +46,8 @@ public class Order_itemsControllerTest {
 
 		assertEquals(created, controller.create());
 
-		Mockito.verify(utils, Mockito.times(1)).getLong();
-		Mockito.verify(utils, Mockito.times(1)).getLong();
-		Mockito.verify(utils, Mockito.times(1)).getLong();
-		Mockito.verify(utils, Mockito.times(1)).getLong();
+		Mockito.verify(utils, Mockito.times(4)).getLong();
+
 		Mockito.verify(dao, Mockito.times(1)).create(created);
 	}
 

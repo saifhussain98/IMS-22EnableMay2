@@ -20,13 +20,13 @@ public class Order_items {
 
     public Order_items(Long fkId, Long fk_orderId, Long fk_itemsId, Long item_quantity) {
 
-        this.fkId = fkId;
+        this.setFkId(fkId);
 
-        this.fk_orderId = fk_orderId;
+        this.setFk_orderId(fk_orderId);
 
-        this.fk_itemsId = fk_itemsId;
+        this.setFk_itemsId(fk_itemsId);
         
-        this.item_quantity = item_quantity;
+        this.setItem_quantity(item_quantity);
         
 //        this.total_cost_of_order = total_cost_of_order;
 
@@ -36,15 +36,15 @@ public class Order_items {
 
     public Order_items(Long order_items_id, Long fkId, Long fk_orderId, Long fk_itemsId, Long item_quantity) {
 
-    	this.order_items_id = order_items_id;
+    	this.setOrder_items_id(order_items_id);
     	
-    	this.fkId = fkId;
+        this.setFkId(fkId);
 
-        this.fk_orderId = fk_orderId;
+        this.setFk_orderId(fk_orderId);
 
-        this.fk_itemsId = fk_itemsId;
+        this.setFk_itemsId(fk_itemsId);
         
-        this.item_quantity = item_quantity;
+        this.setItem_quantity(item_quantity);
         
 //        this.total_cost_of_order = total_cost_of_order;
 

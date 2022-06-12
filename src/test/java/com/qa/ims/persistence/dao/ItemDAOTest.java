@@ -36,7 +36,7 @@ public class ItemDAOTest {
 
 	@Test
 	public void testReadLatest() {
-		assertEquals(new Item(2L, "CricketBall", 5.0), DAO.readLatest());
+		assertEquals(new Item(2L, "football", 5.0), DAO.readLatest());
 	}
 
 	@Test
@@ -47,7 +47,7 @@ public class ItemDAOTest {
 
 	@Test
 	public void testUpdate() {
-		final Item updated = new Item(2L, "PingpongBall", 4);
+		final Item updated = new Item(2L, "football", 4);
 		assertEquals(updated, DAO.update(updated));
 
 	}
