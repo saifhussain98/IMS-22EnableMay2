@@ -49,16 +49,18 @@ public class ItemDAO implements Dao<Item> {
 	}
 
 	public Item readLatest() {
+		Item newItem = null;
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM items ORDER BY itemsId DESC LIMIT 1");) {
 			resultSet.next();
-			return modelFromResultSet(resultSet);
+			newItem = modelFromResultSet(resultSet);
+			return newItem;
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return null;
+		return newItem;
 	}
 
 	/**
@@ -119,7 +121,7 @@ public class ItemDAO implements Dao<Item> {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return null;
+		return item;
 	}
 
 	/**

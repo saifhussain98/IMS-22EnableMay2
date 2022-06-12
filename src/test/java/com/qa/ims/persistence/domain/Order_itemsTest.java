@@ -6,10 +6,9 @@ import nl.jqno.equalsverifier.EqualsVerifier;
 
 public class Order_itemsTest {
 
-	@Test
-	public void testEquals() {
+@Test
+public void testEquals() {
 		EqualsVerifier.simple().forClass(Order_items.class).verify();
-	}
-	
+}
 	
 }

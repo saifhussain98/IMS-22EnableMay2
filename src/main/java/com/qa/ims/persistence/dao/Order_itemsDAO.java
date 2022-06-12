@@ -65,14 +65,14 @@ public class Order_itemsDAO implements Dao<Order_items> {
     @Override
 
     public List<Order_items> readAll() {
-
+    
+    List<Order_items> order_items = new ArrayList<>();
+    
     try (Connection connection = DBUtils.getInstance().getConnection();
 
     Statement statement = connection.createStatement();
 
     ResultSet resultSet = statement.executeQuery("SELECT * FROM order_items");) {
-
-    List<Order_items> order_items = new ArrayList<>();
 
     while (resultSet.next()) {
 
@@ -90,14 +90,14 @@ public class Order_itemsDAO implements Dao<Order_items> {
 
     }
 
-    return new ArrayList<>();
+    return order_items;
 
     }
 
 
 
     public Order_items readLatest() {
-
+    	Order_items newOrder_items = null;
     try (Connection connection = DBUtils.getInstance().getConnection();
 
     Statement statement = connection.createStatement();
@@ -105,8 +105,8 @@ public class Order_itemsDAO implements Dao<Order_items> {
     ResultSet resultSet = statement.executeQuery("SELECT * FROM order_items ORDER BY order_items_id DESC LIMIT 1");) {
 
     resultSet.next();
-
-    return modelFromResultSet(resultSet);
+    newOrder_items = modelFromResultSet(resultSet);
+    return newOrder_items;
 
     } catch (Exception e) {
 
@@ -116,7 +116,7 @@ public class Order_itemsDAO implements Dao<Order_items> {
 
     }
 
-    return null;
+    return newOrder_items;
 
     }
 

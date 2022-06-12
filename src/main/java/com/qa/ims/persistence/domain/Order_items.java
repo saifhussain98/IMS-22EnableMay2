@@ -109,49 +109,32 @@ public class Order_items {
 	public void setItem_quantity(Long item_quantity) {
 		this.item_quantity = item_quantity;
 	}
-
-
-
+	
 	@Override
 	public String toString() {
-		return "Order_items [order_items_id=" + order_items_id + ", fkId=" + fkId + ", fk_orderId=" + fk_orderId
-				+ ", fk_itemsId=" + fk_itemsId + ", item_quantity=" + item_quantity + "]";
+	return "OrderItems [order_items_id=" + order_items_id + ", fkId=" + fkId + ", fk_orderId=" + fk_orderId + ", fk_itemsId=" + fk_itemsId
+	+ ", item_quantity=" + item_quantity + "]";
 	}
 
 
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(fkId, fk_itemsId, fk_orderId, item_quantity, order_items_id);
+	return Objects.hash(fkId, fk_itemsId, fk_orderId, item_quantity, order_items_id);
 	}
 
 
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Order_items other = (Order_items) obj;
-		return Objects.equals(fkId, other.fkId) && Objects.equals(fk_itemsId, other.fk_itemsId)
-				&& Objects.equals(fk_orderId, other.fk_orderId) && item_quantity == other.item_quantity
-				&& Objects.equals(order_items_id, other.order_items_id);
+	if (this == obj)
+	return true;
+	if (obj == null)
+	return false;
+	if (getClass() != obj.getClass())
+	return false;
+	Order_items other = (Order_items) obj;
+	return Objects.equals(fkId, other.fkId) && Objects.equals(fk_orderId, other.fk_orderId)
+	&& Objects.equals(fk_itemsId, other.fk_itemsId) &&Objects.equals(item_quantity, other.item_quantity) && Objects.equals(order_items_id, other.order_items_id);
 	}
-
-
-
-//	public double getTotal_cost_of_order() {
-//		return total_cost_of_order;
-//	}
-
-
-
-//	public void setTotal_cost_of_order(double total_cost_of_order) {
-//		this.total_cost_of_order = total_cost_of_order;
-//	}
-
-
 }
