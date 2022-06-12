@@ -1,5 +1,6 @@
 Coverage: 62.1%
-Inventory Management System
+
+#### Inventory Management System Project
 
 This project was created to run an inventory management system with CRUD functionality for Customers, Items, Orders and Order Items.
 
