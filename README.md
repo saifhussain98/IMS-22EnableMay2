@@ -1,6 +1,6 @@
 Coverage: 62.1%
 
-### Inventory Management System Project
+# Inventory Management System Project
 
 This project was created to run an inventory management system with CRUD functionality for Customers, Items, Orders and Order Items.
 
@@ -58,7 +58,7 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
+* Hat tip to anyone whose code was used!
 * God
 * My parents
-* Jordan Benbelaid becausee he is my hero
+* Jordan Benbelaid because he is my hero
