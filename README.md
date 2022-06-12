@@ -1,68 +1,41 @@
-Coverage: 34%
-# Project Title
+Coverage: 62.1%
+Inventory Management System
 
-One Paragraph of project description goes here
+This project was created to run an inventory management system with CRUD functionality for Customers, Items, Orders and Order Items.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The following instructions will help you get the project on you rlocal system for your own developemt and testing purposes. For a live demo please see the deployment section.
 
 ### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+First Install Java (version 14 or above upto version 17 (I used java 17)) along with SQL which is a relational database. Secondly install an IDE that is compatble with Java (we used Eclipse for this project). We then installed Maven as our build automation tool.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+To install this project, we forked the link to download the project files from GitHub then imported it into eclipse to gain access to the files of the project. Before using Eclipse we first created our Items, Orders and Order Items tables on SQl (Customers was already there for us). We then reated our Domain, DAO and Controller classes. To run/demo the project from the eclipse console you must access the runner class and click "run as" and accept it to be open as a Java application. Here you can perform CRUD functions (create, read, update and delete) customer, items, orders and order items on the terminal and repeat until finished.
 
-Say what the step will be
 
-```
-Give the example
-```
+[Demo.pdf](https://github.com/saifhussain98/IMS-22EnableMay2/files/8886716/Demo.pdf)
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system. Break down into which tests and what they do
+To run the individual tests right click over the indivdual test file you want to test and click "Run as" and then run under the option of JUnit test. To find the coverage of the entire project rihgt click over the entire IMS project folder and select "coverage as" and then click the second option of JUnit test. You can then click on the coverage tab on the bottom of the screen next to the console and terminal tabs and there you will find your overall project test coverage percentages.
 
 ### Unit Tests 
 
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
+The unit tests covered the Domain and DAO classes testing the functionality of CRUD fucntions in the customer, item, order and order items classes.
 
 ### Integration Tests 
-Explain what these tests test, why and how to run them
 
-```
-Give an example
-```
+The Mockito tests tested the ability of the controller classes to be able to get the information from the Domain and DAO classes whislt also testing the functionality of the Controller classes.
 
-### And coding style tests
+[How to run coverage Test.pdf](https://github.com/saifhussain98/IMS-22EnableMay2/files/8886792/How.to.run.coverage.Test.pdf)
 
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Run the Jar file in the target folder to run the application from any CLI.
 
 ## Built With
 
@@ -70,7 +43,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning.
+We use Github for versioning (https://github.com). 
 
 ## Authors
 
@@ -85,7 +58,6 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Hat tip to anyone whose code was used
-* Inspiration
-* etc
-# IMS-Start
-# IMS-Start
+* God
+* My parents
+* Jordan Benbelaid becausee he is my hero
